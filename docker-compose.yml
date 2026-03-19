@@ -20,7 +20,7 @@ services:
     environment:
       - NEXT_PUBLIC_SRS_HTTP_URL=http://localhost:8080
       - NEXT_PUBLIC_RTMP_HOST=localhost
-      - NEXT_PUBLIC_NOSTR_RELAYS=wss://relay.damus.io,wss://relay.nostr.band,wss://nos.lol,wss://relay.primal.net
+      - NEXT_PUBLIC_NOSTR_RELAYS=wss://relay.damus.io,wss://relay.nostr.net,wss://nos.lol,wss://relay.primal.net
     depends_on:
       - srs
     restart: unless-stopped

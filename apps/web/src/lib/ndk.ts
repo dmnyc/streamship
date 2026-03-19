@@ -1,6 +1,6 @@
 import NDK from "@nostr-dev-kit/ndk";
 
-const RELAYS = (process.env.NEXT_PUBLIC_NOSTR_RELAYS || "wss://relay.damus.io,wss://relay.nostr.band,wss://nos.lol,wss://relay.primal.net")
+const RELAYS = (process.env.NEXT_PUBLIC_NOSTR_RELAYS || "wss://relay.damus.io,wss://relay.nostr.net,wss://nos.lol,wss://relay.primal.net")
   .split(",")
   .map((r) => r.trim())
   .filter(Boolean);

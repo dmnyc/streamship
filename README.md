@@ -71,7 +71,7 @@ Your stream key is derived from your Nostr pubkey (first 32 hex chars). This mea
 ## Default Relays
 
 - wss://relay.damus.io
-- wss://relay.nostr.band
+- wss://relay.nostr.net
 - wss://nos.lol
 - wss://relay.primal.net
 
