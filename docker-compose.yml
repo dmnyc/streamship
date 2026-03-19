@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  srs:
+    build:
+      context: ./docker/srs
+    ports:
+      - "1935:1935"   # RTMP ingest
+      - "8080:8080"   # HLS / HTTP API
+    volumes:
+      - srs-data:/usr/local/srs/objs
+    restart: unless-stopped
+
+  web:
+    build:
+      context: ./apps/web
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_SRS_HTTP_URL=http://localhost:8080
+      - NEXT_PUBLIC_RTMP_HOST=localhost
+      - NEXT_PUBLIC_NOSTR_RELAYS=wss://relay.damus.io,wss://relay.nostr.band,wss://nos.lol,wss://relay.primal.net
+    depends_on:
+      - srs
+    restart: unless-stopped
+
+volumes:
+  srs-data:
